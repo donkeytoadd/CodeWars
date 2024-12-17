@@ -5,9 +5,25 @@
 // any third party without the prior written consent of XLN Telecom Ltd.
 // ----------------------------------------------------------------------------------------------------
 
-namespace CodeWars._7Kyu.CompleteThePattern_1;
+namespace CodeWars._7Kyu.BandNameGenerator;
 
-public class CompletePatternTests
+public class Kata
 {
-    
+    public static string BandNameGenerator(string str)
+    {
+        var firstChar = char.ToUpper(str[0]);
+        var restOfWord = str.Substring(1);
+        string result;
+        
+        if (str[0] == str[str.Length - 1])
+        {
+            result = firstChar + restOfWord + restOfWord;
+        }
+        else
+        {
+            result = $"The {firstChar + restOfWord}";
+        }
+        
+        return result;
+    }
 }

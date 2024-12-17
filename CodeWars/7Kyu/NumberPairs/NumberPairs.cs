@@ -5,18 +5,17 @@
 // any third party without the prior written consent of XLN Telecom Ltd.
 // ----------------------------------------------------------------------------------------------------
 
-namespace CodeWars;
+namespace CodeWars._7Kyu.NumberPairs;
 
-public class CodeWars
+public class NumberPairs
 {
-    public static void Main(string[] args)
+    public static int [] GetLargerNumbers(int [] a , int [] b)
     {
-        var arr1 = new[] { 13, 64, 15, 17, 88 };
-        var arr2 = new[] { 23, 14, 53, 17, 80 };
-        var test = _7Kyu.NumberPairs.NumberPairs.GetLargerNumbers(arr1, arr2);
-        for (int i = 0; i < test.Length; i++)
+        var tempList = new List<int>();
+        for (int i = 0; i <= a.Length - 1 && i <= b.Length - 1; i++)
         {
-            Console.WriteLine(test[i]);
+            tempList.Add(a[i] > b[i] ? a[i] : b[i]);
         }
+        return tempList.ToArray();
     }
 }

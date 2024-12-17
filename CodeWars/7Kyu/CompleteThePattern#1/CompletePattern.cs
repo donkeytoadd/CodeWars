@@ -9,5 +9,26 @@ namespace CodeWars._7Kyu.CompleteThePattern_1;
 
 public class CompletePattern
 {
-    
+    public string Pattern(int n)
+    {
+        if (n < 1)
+        {
+            return string.Empty;
+        }
+
+        string result = string.Empty;
+
+        for (int i = 1; i <= n; i++)
+        {
+            string repeated = new string(' ', i).Replace(" ", i.ToString());
+            result += repeated;
+
+            if (i < n)
+            {
+                result += "\n";
+            }
+        }
+
+        return result;
+    }
 }
