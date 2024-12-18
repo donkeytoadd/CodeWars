@@ -1,0 +1,48 @@
+function swapBricks(solution):
+    lorry1 = randomLorry(solution)
+    lorry2 = differentLorry(solution, lorry1)
+
+    brick1 = randomBrick(solution, lorry1)
+    brick2 = randomBrick(solution, lorry2)
+
+    // Swap bricks between lorries
+    solution[lorry1].remove(brick1)
+    solution[lorry2].remove(brick2)
+    solution[lorry1].add(brick2)
+    solution[lorry2].add(brick1)
+
+    return solution
+    
+function moveBrick(solution):
+    startLorry = randomLorry(solution)
+    destinationLorry = differentLorry(solution, sourceLorry)
+
+    brick = randomBrick(solution, sourceLorry)
+
+    // Move brick to another lorry
+    solution[sourceLorry].remove(brick)
+    solution[destinationLorry].add(brick)
+
+    return solution
+
+function randomRedistribution(solution, n):
+    totalBricksToRedistribute = n
+
+    while totalBricksToRedistribute > 0:
+        for each lorry in solution:
+            if totalBricksToRedistribute == 0:
+                break  // Exit the loop if we've reached the desired number of swaps
+
+            // Randomly select a brick from the current lorry
+            selectedBrick = randomBrick(solution, lorry)
+
+            // Randomly select another lorry (different from the current lorry)
+            destinationLorry = differentLorry(solution, lorry)
+
+            // Move the selected brick to the randomly selected lorry
+            solution[lorry].remove(selectedBrick)
+            solution[destinationLorry].add(selectedBrick)
+
+            totalBricksToRedistribute -= 1
+
+    return solution

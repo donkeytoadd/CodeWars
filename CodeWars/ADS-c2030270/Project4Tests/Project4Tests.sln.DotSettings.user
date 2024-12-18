@@ -1,0 +1,9 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=621c0972_002D3c7e_002D4904_002D9b50_002De9498f6a03b0/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="BubbleSort2Tests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::CCDEDBE1-46A8-423C-BDED-CEFDEDA625CC::net7.0::Project4Tests.BubbleSort2Tests&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::CCDEDBE1-46A8-423C-BDED-CEFDEDA625CC::net7.0::Project4_c2030270.Tests.QuickSortTests&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::CCDEDBE1-46A8-423C-BDED-CEFDEDA625CC::net7.0::Project4Tests.QuickSortTests&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::CCDEDBE1-46A8-423C-BDED-CEFDEDA625CC::net7.0::Project4Tests.ProgramTests&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
