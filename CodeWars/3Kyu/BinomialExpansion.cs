@@ -6,23 +6,46 @@
 // ----------------------------------------------------------------------------------------------------
 
 namespace CodeWars._3Kyu;
-
 public class BinomialExpansion
 {
     public static string Expand(string expr)
     {
-        var coefficient = expr.Skip(1)
-            .TakeWhile(x => !Char.IsLetter(x));
+        var coefficientString = expr.Skip(1)
+            .TakeWhile(x => !Char.IsLetter(x)).ToString();
 
-        var a = coefficient.ToString().Length == 0 ? 1 : 
-            coefficient.ToString() == "-" ? 1 : int.Parse(coefficient.ToString()); 
+        var a = coefficientString != null && coefficientString.Length == 0 ? 1 : 
+            coefficientString == "-" ? 1 : int.Parse(coefficientString); 
         var x = Convert.ToChar(expr.IndexOf('x'));
         var powerIndex = Convert.ToChar(expr.IndexOf('^'));
         var b = int.Parse(expr[(expr.IndexOf(x) + 1)..expr.IndexOf(')')]);
         var n = int.Parse(expr[(expr.IndexOf(powerIndex) + 1)..]);
+
+        var result = new List<string>();
+
+        for (int k = 0; k <= n; k++)
+        {
+            var coefficient = BinomialCoefficient(n, k) * Math.Pow(a, n - k) * Math.Pow(b, k);
+
+            if (coefficient == 0) continue;
+
+            var term = coefficient == 1 && (n - k > 0) ? "" : coefficient.ToString();
+            if (n - k > 0) term += "x";
+            if (n - k > 1) term += $"^{n - k}";
+
+            result.Add(term);
+        }
+
+        return string.Join("", result.Select((term, i) => i > 0 && !term.StartsWith("-") ? "+" + term : term));
         
-        
-        
-        return "";
+    }
+
+    public static long Factorial(long n)
+    {
+        return n == 0 ? 1 : n * Factorial(n - 1);
+    }
+
+    public static long BinomialCoefficient(long n, long k)
+    {
+        return Factorial(n) / (Factorial(k) * Factorial(n - k));
     }
 }
