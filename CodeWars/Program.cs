@@ -7,10 +7,15 @@
 
 namespace CodeWars;
 
+using _3Kyu;
+
 public class CodeWars
 {
     public static void Main(string[] args)
     {
-        
+        string str = "(2x+3)^3";
+        var result = BinomialExpansion.Expand(str);
+        Console.WriteLine(result);
+
     }
 }
